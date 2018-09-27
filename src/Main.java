@@ -70,6 +70,11 @@ public class Main {
 		double sqre = Math.pow(ranNum, 2);
 		return sqre;
 	}
+	
+	public static double squareNum(double numToSquare) {
+		double sqre = Math.pow(numToSquare, 2);
+		return sqre;
+	}
 
 	public static void printIntro() {
 		final double VERSION = 1.0; // This is a final variable which means it has a constant value
