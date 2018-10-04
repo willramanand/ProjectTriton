@@ -5,10 +5,11 @@ import java.util.Scanner;
  * A sweet program to show off all I learned in COP 2006.*/
 
 public class Main {
+	
+	static int iCastUp = 5;
+	static double dCastDown = 5.6;
 
 	public static void main(String[] args) {
-		int iCastUp = 5;
-		double dCastDown = 5.6;
 
 
 		printIntro();
@@ -17,39 +18,40 @@ public class Main {
 		System.out.println(castDoubleToInt(dCastDown));
 		System.out.println(squareNum());
 	}
+	
+	public static void printIntro() {
+		final double VERSION = 1.0; // This is a final variable which means it has a constant value
+		System.out.println("Welcome user to Project Triton\n" + "This is version " + VERSION);
+	}
 
 	public static void getCharacterInfo() {
-		Person newChar = new Person();
+		Character newChar = new Character();
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("\nEnter your age: ");
-		newChar.setAge(sc.nextInt());
-
 		System.out.println("Enter your gender as M or F: ");
-		sc.nextLine();
+		newChar.setGender(sc.nextLine()); // This line capitalizes the M or F and converts from String to char
 
-		// This line capitalizes the M or F and converts from String to char
-		newChar.setGender(sc.nextLine());
-
-		System.out.println("Enter your height as a decimal: ");
-		newChar.setHeight(sc.nextDouble());
-
-		System.out.println("Are you married, true or false: ");
-		newChar.setMarried(sc.nextBoolean());
-
-		sc.nextLine();
 		System.out.println("Enter your name: ");
 		newChar.setName(sc.nextLine());
 		
 		sc.close();
+		
+		newChar.setMaxHealth(50);
+		newChar.setCurrentHealth(10);
+		
+		newChar.setMaxPower(10);
+		newChar.setCurrentPower(0);
 
 		// This line makes sure the first letter of the person's name is capitalized
 		// It takes the first letter, capitalizes it, then adds the second letter
 		// and since there is no end index in the substring the rest of the String
 
-		System.out.printf("\n%s:\n" + "\tAge: %s\n" + "\tGender: %s\n" + "\tHeight: %s\n" + "\tMarried: %s\n",
-				newChar.getName(), newChar.getAge(), newChar.getGender(), newChar.getHeight(), newChar.getMarried());
+		System.out.printf("\n%s: \n" 
+				+ "\tGender: %s\n"
+				+ "\tHealth: %s/%s HP \n"
+				+ "\tPower: %s/%s Power \n",
+				newChar.getName(), newChar.getGender(), newChar.getCurrentHealth(), newChar.getMaxHealth(), newChar.getCurrentPower(), newChar.getMaxPower());
 
 	}
 	// This method takes in int ICastUp and Cast it up to a double and returns double dCastUp
@@ -74,11 +76,6 @@ public class Main {
 	public static double squareNum(double numToSquare) {
 		double sqre = Math.pow(numToSquare, 2);
 		return sqre;
-	}
-
-	public static void printIntro() {
-		final double VERSION = 1.0; // This is a final variable which means it has a constant value
-		System.out.println("Welcome user to Project Triton\n" + "This is version " + VERSION);
 	}
 
 }
