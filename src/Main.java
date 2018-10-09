@@ -29,10 +29,10 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Enter your gender as M or F: ");
+		System.out.println("Enter your character's gender as M or F: ");
 		newChar.setGender(sc.nextLine()); // This line capitalizes the M or F and converts from String to char
 
-		System.out.println("Enter your name: ");
+		System.out.println("Enter your character's name: ");
 		newChar.setName(sc.nextLine());
 		
 		sc.close();

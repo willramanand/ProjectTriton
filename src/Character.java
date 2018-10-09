@@ -30,11 +30,31 @@ public class Character {
 	public void setMaxHealth(double newMaxHealth) { maxHealth = newMaxHealth; }
 	public double getMaxHealth() { return maxHealth; }
 	
+	public double changeCurrentHealth(double changeCurHealth) { 
+		currentHealth = currentHealth + changeCurHealth;
+		return currentHealth;
+	}
+	
+	public double changeMaxHealth(double changeMaxHealth) {
+		maxHealth = maxHealth + changeMaxHealth;
+		return maxHealth;
+	}
+	
 	
 	public void setCurrentPower(int newCurrentPower) { currentPower = newCurrentPower; }
 	public int getCurrentPower() { return currentPower; }
 	public void setMaxPower(int newMaxPower) { maxPower = newMaxPower; }
 	public int getMaxPower() { return maxPower; }
+	
+	public int changeCurrentPower(int changeCurPower) { 
+		currentPower = currentPower + changeCurPower;
+		return currentPower;
+	}
+	
+	public int changeMaxPower(int changeMaxPower) {
+		maxPower = maxPower + changeMaxPower;
+		return maxPower;
+	}
 	
 	public void setGender(String newGender) { gender = newGender.toUpperCase().charAt(0); }
 	public char getGender() { return gender; }
