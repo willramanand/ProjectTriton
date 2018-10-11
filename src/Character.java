@@ -23,7 +23,7 @@ public class Character {
   private String item;
 
   public void setName(String newName) {
-    name = newName.substring(0, 1).toUpperCase() + newName.substring(1);
+    name = newName.substring(0, 1).toUpperCase() + newName.substring(1); // substring is one of
   }
 
   public String getName() {

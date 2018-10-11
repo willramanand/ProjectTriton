@@ -100,6 +100,13 @@ public class Main {
     double sqre = Math.pow(ranNum, 2);
     return sqre;
   }
+  
+  /*
+   * Operator precedence determines the grouping of terms in an expression. \
+   * This affects how an expression is evaluated. 
+   * Certain operators have higher precedence than others; 
+   * for example, the multiplication operator has higher precedence than the addition operator
+   */
 
   public static void mathOps() {
     int mathResult;
