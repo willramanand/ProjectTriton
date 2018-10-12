@@ -2,8 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 /*
- * William Ramanand 
- * A sweet program to show off all I learned in COP 2006.
+ * William Ramanand A sweet program to show off all I learned in COP 2006.
  */
 
 public class Main {
@@ -18,8 +17,7 @@ public class Main {
 
     Scanner sc = new Scanner(System.in);
 
-    System.out.println("_______Main Menu_______" 
-        + "\n1. Create a character!"
+    System.out.println("_______Main Menu_______" + "\n1. Create a character!"
         + "\n2. Print random mathematical processes to prove my math skills!"
         + "\n3. Compare two inputted words!");
 
@@ -31,16 +29,19 @@ public class Main {
         getCharacterInfo();
         break;
       case 2:
-        System.out.println("The integer " + iCastUp + " casted to a double is " + castIntToDouble(iCastUp)); // castIntToDouble is a method call and
-                                                      // iCastUp is an argument within this method
-                                                      // call
-        System.out.println("The double " + dCastDown + " cast to an integer is " + castDoubleToInt(dCastDown));
+        System.out.println(
+            "The integer " + iCastUp + " casted to a double is " + castIntToDouble(iCastUp)); 
+            // castIntToDouble is a method call and
+            // iCastUp is an argument within this method
+            // call
+        System.out.println(
+            "The double " + dCastDown + " cast to an integer is " + castDoubleToInt(dCastDown));
         System.out.println(squareNum());
         mathOps();
         break;
       case 3:
-    	  strComp();
-    	  break;
+        strComp();
+        break;
       default:
         System.out.println("That is not a valid choice!");
     }
@@ -58,7 +59,7 @@ public class Main {
     Scanner sc = new Scanner(System.in);
 
     System.out.println("Enter your character's gender as M or F: ");
-    newChar.setGender(sc.nextLine()); 
+    newChar.setGender(sc.nextLine());
 
     System.out.println("Enter your character's name: ");
     newChar.setName(sc.nextLine());
@@ -101,12 +102,11 @@ public class Main {
     double sqre = Math.pow(ranNum, 2); // Use of Math Class
     return sqre;
   }
-  
+
   /*
-   * Operator precedence determines the grouping of terms in an expression. \
-   * This affects how an expression is evaluated. 
-   * Certain operators have higher precedence than others; 
-   * for example, the multiplication operator has higher precedence than the addition operator
+   * Operator precedence determines the grouping of terms in an expression. \ This affects how an
+   * expression is evaluated. Certain operators have higher precedence than others; for example, the
+   * multiplication operator has higher precedence than the addition operator
    */
 
   public static void mathOps() {
@@ -137,26 +137,27 @@ public class Main {
     System.out.println("Adding 10 to the last value = " + mathResult);
 
   }
-  
+
   public static void strComp() {
-	  Scanner sc = new Scanner(System.in);
-	  
-	  String word1;
-	  String word2;
-	  
-	  System.out.println("Please enter a random word: ");
-	  word1 = sc.nextLine();
-	  System.out.println("Please enter another random word: ");
-	  word2 = sc.nextLine();
-	  
-	  
-	  if (word1.equals(word2) && word1.compareTo(word2) == 0) {
-		  System.out.println("You entered the same word!");
-	  } else if (word1.equalsIgnoreCase(word2) || word1.compareTo(word2) == 0) {
-		  System.out.println("You entered the same word but their letters are not all in the same case!");
-	  } else {
-		  System.out.println("You did not enter the same word!");  
-	  }
+    Scanner sc = new Scanner(System.in);
+
+    String word1;
+    String word2;
+
+    System.out.println("Please enter a random word: ");
+    word1 = sc.nextLine();
+    System.out.println("Please enter another random word: ");
+    word2 = sc.nextLine();
+
+
+    if (word1.equals(word2) && word1.compareTo(word2) == 0) {
+      System.out.println("You entered the same word!");
+    } else if (word1.equalsIgnoreCase(word2) || word1.compareTo(word2) == 0) {
+      System.out
+          .println("You entered the same word but their letters are not all in the same case!");
+    } else {
+      System.out.println("You did not enter the same word!");
+    }
   }
 
 }
