@@ -2,12 +2,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 /*
- * William Ramanand A sweet program to show off all I learned in COP 2006.
+ * William Ramanand 
+ * A sweet program to show off all I learned in COP 2006.
  */
 
 public class Main {
 
-  static int iCastUp = 5;
+  static int iCastUp = 2;
   static double dCastDown = 5.6;
 
   public static void main(String[] args) {
@@ -19,7 +20,8 @@ public class Main {
 
     System.out.println("_______Main Menu_______" 
         + "\n1. Create a character!"
-        + "\n2. Print random mathematical processes to prove my math skills!");
+        + "\n2. Print random mathematical processes to prove my math skills!"
+        + "\n3. Compare two inputted words!");
 
     System.out.println("Please enter a selection: ");
     mainMenuSelection = sc.nextInt();
@@ -29,13 +31,16 @@ public class Main {
         getCharacterInfo();
         break;
       case 2:
-        System.out.println(castIntToDouble(iCastUp)); // castIntToDouble is a method call and
+        System.out.println("The integer " + iCastUp + " casted to a double is " + castIntToDouble(iCastUp)); // castIntToDouble is a method call and
                                                       // iCastUp is an argument within this method
                                                       // call
-        System.out.println(castDoubleToInt(dCastDown));
+        System.out.println("The double " + dCastDown + " cast to an integer is " + castDoubleToInt(dCastDown));
         System.out.println(squareNum());
         mathOps();
         break;
+      case 3:
+    	  strComp();
+    	  break;
       default:
         System.out.println("That is not a valid choice!");
     }
@@ -44,7 +49,7 @@ public class Main {
 
   public static void printIntro() {
     final double VERSION = 1.0; // This is a final variable which means it has a constant value
-    System.out.println("Welcome user to Project Triton\n" + "This is version " + VERSION);
+    System.out.println("Welcome user to Project Triton\n" + "This is version " + VERSION); // Introduction
   }
 
   public static void getCharacterInfo() {
@@ -53,8 +58,7 @@ public class Main {
     Scanner sc = new Scanner(System.in);
 
     System.out.println("Enter your character's gender as M or F: ");
-    newChar.setGender(sc.nextLine()); // This line capitalizes the M or F and converts from String
-                                      // to char
+    newChar.setGender(sc.nextLine()); 
 
     System.out.println("Enter your character's name: ");
     newChar.setName(sc.nextLine());
@@ -67,9 +71,6 @@ public class Main {
     newChar.setMaxPower(10);
     newChar.setCurrentPower(0);
 
-    // This line makes sure the first letter of the person's name is capitalized
-    // It takes the first letter, capitalizes it, then adds the second letter
-    // and since there is no end index in the substring the rest of the String
 
     System.out.printf(
         "\n%s: \n" + "\tGender: %s\n" + "\tHealth: %s/%s HP \n" + "\tPower: %s/%s Power \n",
@@ -95,9 +96,9 @@ public class Main {
   // This method generates a random number then squares it
   public static double squareNum() {
     System.out.println("Here is a randomly generated square of a number between 1 and 10: ");
-    Random rand = new Random();
+    Random rand = new Random(); // Use of Random Class
     int ranNum = rand.nextInt(10) + 1;
-    double sqre = Math.pow(ranNum, 2);
+    double sqre = Math.pow(ranNum, 2); // Use of Math Class
     return sqre;
   }
   
@@ -135,6 +136,27 @@ public class Main {
     mathResult += 10;
     System.out.println("Adding 10 to the last value = " + mathResult);
 
+  }
+  
+  public static void strComp() {
+	  Scanner sc = new Scanner(System.in);
+	  
+	  String word1;
+	  String word2;
+	  
+	  System.out.println("Please enter a random word: ");
+	  word1 = sc.nextLine();
+	  System.out.println("Please enter another random word: ");
+	  word2 = sc.nextLine();
+	  
+	  
+	  if (word1.equals(word2) && word1.compareTo(word2) == 0) {
+		  System.out.println("You entered the same word!");
+	  } else if (word1.equalsIgnoreCase(word2) || word1.compareTo(word2) == 0) {
+		  System.out.println("You entered the same word but their letters are not all in the same case!");
+	  } else {
+		  System.out.println("You did not enter the same word!");  
+	  }
   }
 
 }
