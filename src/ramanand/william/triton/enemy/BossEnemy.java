@@ -11,9 +11,17 @@ public class BossEnemy extends BasicEnemy {
   
   public BossEnemy() {
     Random r = new Random();
-    name = grabRandomName(r.nextInt(17)) + " the ";
+    setName(grabRandomName(r.nextInt(17)) + " the ");
     setEnemyPower(r.nextInt(1000) + 1);
     setEnemyHealth(r.nextInt(5000) + 1);
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
   
 }
