@@ -8,10 +8,13 @@ import java.util.Scanner;
 
 public class Main extends Canvas implements Runnable {
 
+<<<<<<< HEAD
   /**
    * 
    */
   private static final long serialVersionUID = 8810007639119451188L;
+=======
+>>>>>>> 34381f3d8e2bb4a92889c008da494f1a9ff50ffa
   static int iCastUp = 2;
   static double dCastDown = 5.6;
   
@@ -27,6 +30,7 @@ public class Main extends Canvas implements Runnable {
     printIntro();
 
     Scanner sc = new Scanner(System.in);
+<<<<<<< HEAD
     System.out.println("_______Main Menu_______" + "\n1. Create a character!"
           + "\n2. Print random mathematical processes to prove my math skills!"
           + "\n3. Compare two inputted words!"
@@ -57,6 +61,36 @@ public class Main extends Canvas implements Runnable {
           System.out.println("That is not a valid choice!");
           break;
       }
+=======
+
+    System.out.println("_______Main Menu_______" + "\n1. Create a character!"
+        + "\n2. Print random mathematical processes to prove my math skills!"
+        + "\n3. Compare two inputted words!");
+
+    System.out.println("Please enter a selection: ");
+    mainMenuSelection = sc.nextInt();
+
+    switch (mainMenuSelection) {
+      case 1:
+        getCharacterInfo();
+        break;
+      case 2:
+        System.out.println(
+            "The integer " + iCastUp + " casted to a double is " + castIntToDouble(iCastUp)); 
+            // castIntToDouble is a method call and
+            // iCastUp is an argument within this method
+            // call
+        System.out.println(
+            "The double " + dCastDown + " cast to an integer is " + castDoubleToInt(dCastDown));
+        System.out.println(squareNum());
+        mathOps();
+        break;
+      case 3:
+        strComp();
+        break;
+      default:
+        System.out.println("That is not a valid choice!");
+>>>>>>> 34381f3d8e2bb4a92889c008da494f1a9ff50ffa
     }
     sc.close();
   }
@@ -117,7 +151,11 @@ public class Main extends Canvas implements Runnable {
   }
 
   /*
+<<<<<<< HEAD
    * Operator precedence determines the grouping of terms in an expression. This affects how an
+=======
+   * Operator precedence determines the grouping of terms in an expression. \ This affects how an
+>>>>>>> 34381f3d8e2bb4a92889c008da494f1a9ff50ffa
    * expression is evaluated. Certain operators have higher precedence than others; for example, the
    * multiplication operator has higher precedence than the addition operator
    */
@@ -173,4 +211,8 @@ public class Main extends Canvas implements Runnable {
     }
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 34381f3d8e2bb4a92889c008da494f1a9ff50ffa
