@@ -8,10 +8,12 @@ import java.util.Random;
 public class BossEnemy extends BasicEnemy {
   
   private String name;
+  private String[] title = {"Great", "Towering", "Tank", "Invincible", "Beserk", "Wolf", "Lion",
+      "Dead", "Malevolent"};
   
   public BossEnemy() {
     Random r = new Random();
-    this.name = grabRandomName(r.nextInt(17)) + " the ";
+    this.name = grabRandomName(r.nextInt(17)) + " the " + title[r.nextInt(10)];
     setEnemyPower(r.nextInt(1000) + 1);
     setEnemyHealth(r.nextInt(5000) + 1);
   }

@@ -20,16 +20,19 @@ public class Character {
    * you must use the getter or setter below.
    */
   private String name;
+  private int level;
+  private int maxLevel = 50;
   private int currentPower;
-  private int maxPower;
+  private static int baseMaxPower = 10;
   private double currentHealth;
-  private double maxHealth;
+  private static double baseMaxHealth = 50.0;
   private char gender;
   private String item;
   private String genderFull;
-
+  
+  public void isDead() {}
   public void setName(String newName) {
-    name = newName.substring(0, 1).toUpperCase() + newName.substring(1); // substring and toUpperCase are methods from the String class
+   name = newName.substring(0, 1).toUpperCase() + newName.substring(1); // substring and toUpperCase are methods from the String class
     
     // This line makes sure the first letter of the person's name is capitalized
     // It takes the first letter, capitalizes it, then adds the second letter
@@ -49,27 +52,9 @@ public class Character {
     return currentHealth;
   }
 
-  public void setMaxHealth(double newMaxHealth) {
-    maxHealth = newMaxHealth;
-  }
-
   public double getMaxHealth() {
-    return maxHealth;
+    return baseMaxHealth * level;
   }
-
-  public double changeCurrentHealth(double changeCurHealth) {
-    currentHealth += changeCurHealth;
-
-    // This ternary operator insures that the currentHealth does not exceed the maxHealth
-    currentHealth = (currentHealth > maxHealth) ? maxHealth : currentHealth;
-    return currentHealth;
-  }
-
-  public double changeMaxHealth(double changeMaxHealth) {
-    maxHealth += changeMaxHealth;
-    return maxHealth;
-  }
-
 
   public void setCurrentPower(int newCurrentPower) {
     currentPower = newCurrentPower;
@@ -79,37 +64,28 @@ public class Character {
     return currentPower;
   }
 
-  public void setMaxPower(int newMaxPower) {
-    maxPower = newMaxPower;
-  }
-
   public int getMaxPower() {
-    return maxPower;
+    return baseMaxPower * level;
   }
 
   public int changeCurrentPower(int changeCurPower) {
     currentPower += changeCurPower;
 
-    currentPower = (currentPower > maxPower) ? maxPower : currentPower;
+    currentPower = (currentPower > this.getMaxPower()) ? this.getMaxPower() : currentPower;
     return currentPower;
-  }
-
-  public int changeMaxPower(int changeMaxPower) {
-    maxPower += changeMaxPower;
-    return maxPower;
   }
 
   public void setGender(String newGender) {
     gender = newGender.toUpperCase().charAt(0); // charAt is the last of three methods from String class
     
- // This line capitalizes the M or F and converts from String
- // to char
+    // This line capitalizes the M or F and converts from String
+    // to char
     
     // Below is the if/else statement
     if (gender == 'M') { // == Operator compares both sides to see if they are the same, if they are its value is true, if not then false.
-    	genderFull = "Male";
+      genderFull = "Male";
     } else if (gender == 'F') {
-    	genderFull = "Female";
+      genderFull = "Female";
     }
   }
 
@@ -124,6 +100,32 @@ public class Character {
   public String getItem() {
     return item;
   }
+  
+  public void setLevel(int level) {
+    this.level = level;
+  }
+  
+  public int getLevel() {
+    level = (level > maxLevel) ? maxLevel : level;
+    return level;
+  }
 
+  public double healing(double healthHeal) {
+    currentHealth += healthHeal;
 
+    // This ternary operator insures that the currentHealth does not exceed the maxHealth
+    currentHealth = (currentHealth > this.getMaxHealth()) ? this.getMaxHealth() : currentHealth;
+    return currentHealth;
+  }
+  
+  public double damage(double damageDealt) {
+    currentHealth -= damageDealt;
+    
+    if (currentHealth < 0) {
+      isDead();
+      return currentHealth = 0.0;
+    } else {
+      return currentHealth;
+    }
+  } 
 }

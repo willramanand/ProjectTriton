@@ -81,6 +81,8 @@ public class Main extends Canvas {
 
   public static void getCharacterInfo() {
     Character newChar = new Character();
+    
+    newChar.setLevel(50);
 
     Scanner sc = new Scanner(System.in);
 
@@ -92,10 +94,7 @@ public class Main extends Canvas {
 
     sc.close();
 
-    newChar.setMaxHealth(50);
     newChar.setCurrentHealth(10);
-
-    newChar.setMaxPower(10);
     newChar.setCurrentPower(0);
 
 
