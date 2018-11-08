@@ -30,7 +30,9 @@ public class Character {
   private String item;
   private String genderFull;
   
-  public void isDead() {}
+  public void isDead() {
+    
+  }
   public void setName(String newName) {
    name = newName.substring(0, 1).toUpperCase() + newName.substring(1); // substring and toUpperCase are methods from the String class
     

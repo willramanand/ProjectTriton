@@ -1,5 +1,7 @@
 package ramanand.william.triton.enemy;
 
+import java.util.Random;
+
 /*
  * Ignore these classes for Integration PSI 1
  */
@@ -13,13 +15,15 @@ public abstract class BasicEnemy {
   private int currentPower;
   private double maxHealth;
   private double currentHealth;
-
+  
+  Random r = new Random();
+  
   public String grabRandomName(int nameArrayInt) {
-    return name[nameArrayInt];
+    return name[r.nextInt(name.length)];
   }
 
-  public void setEnemyPower(int power) {
-    maxPower = power;
+  public void setEnemyPower(int rPower) {
+    maxPower = r.nextInt(rPower);
     currentPower = maxPower;
   }
 
@@ -36,8 +40,8 @@ public abstract class BasicEnemy {
     return currentPower;
   }
 
-  public void setEnemyHealth(double health) {
-    maxHealth = health;
+  public void setEnemyHealth(double rHealth) {
+    maxHealth = r.nextDouble();
     currentHealth = maxHealth;
   }
 

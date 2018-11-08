@@ -14,8 +14,8 @@ public class BossEnemy extends BasicEnemy {
   public BossEnemy() {
     Random r = new Random();
     this.name = grabRandomName(r.nextInt(17)) + " the " + title[r.nextInt(10)];
-    setEnemyPower(r.nextInt(1000) + 1);
-    setEnemyHealth(r.nextInt(5000) + 1);
+    this.setEnemyPower(r.nextInt(1000) + 1);
+    this.setEnemyHealth(r.nextInt(5000) + 1);
   }
 
   
