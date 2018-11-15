@@ -22,6 +22,5 @@ public class StringOps {
     } else {
       System.out.println("You did not enter the same word!");
     }
-    sc.close();
   }
 }
