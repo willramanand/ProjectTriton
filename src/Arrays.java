@@ -25,10 +25,11 @@ public class Arrays {
     }
 
     // Decide the smallest value within the array
+    // Enhanced for loop
     int small = arr[0];
-    for (int k = 0; k < arr.length; k++) {
-      if (small > arr[k])
-        small = arr[k];
+    for (int element: arr) {
+      if (small > element)
+        small = element;
     }
 
     // Decide the largest value within the array
@@ -69,6 +70,8 @@ public class Arrays {
 
     int rowCord = 0;
     int colCord = 0;
+    int indexRow = 0;
+    int indexCol = 0;
     int large = twoDArr[0][0];
     for (int m = 0; m < row; m++) {
       for (int n = 0; n < col; n++) {
@@ -76,6 +79,8 @@ public class Arrays {
           large = twoDArr[m][n];
           rowCord = m + 1;
           colCord = n + 1;
+          indexRow = m;
+          indexCol = n;
         }
       }
     }
@@ -83,6 +88,7 @@ public class Arrays {
     System.out.println("\nThe largest value in the array is " + large);
     System.out.println("The cordinate for the row of this value is " + rowCord);
     System.out.println("The coordinate for the column of this value is " + colCord);
+    System.out.println("The index of this value is " + indexRow + ", " + indexCol);
   }
 
   public void arrayList() {

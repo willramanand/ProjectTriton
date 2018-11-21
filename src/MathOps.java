@@ -69,8 +69,11 @@ public class MathOps {
     return sqre;
   }
   
-  public double squareNum(int numTosqr) {
-    return 0.0;
+  public int power(int numTosqr, int exp) { 
+    return (int) Math.pow(numTosqr, exp);
   }
 
+  public int power(double numTosqr, double exp) { // method overload	
+	  return (int) Math.pow(numTosqr, exp);       // example of polymorphism
+  }
 }
