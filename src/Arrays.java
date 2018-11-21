@@ -28,8 +28,11 @@ public class Arrays {
     // Enhanced for loop
     int small = arr[0];
     for (int element: arr) {
-      if (small > element)
+      if (element == 1) {
+    	  continue; // use of continue to just move on to next part if first element is 1
+      } else if (small > element) {
         small = element;
+      }
     }
 
     // Decide the largest value within the array
@@ -107,25 +110,44 @@ public class Arrays {
           + "\n3. Return to Main Menu");
 
       System.out.println("Please enter a selection: ");
-      selection = sc.nextInt();
+      try {
+    	  selection = sc.nextInt();
+      } catch (Exception e) {
+    	  sc.next();
+      }
 
       switch (selection) {
         case 1:
-          System.out.println("What position would you like it to be added to?");
-          position = sc.nextInt() - 1;
-          sc.nextLine();
-          System.out.println("What name would you like to add?");
-          name = sc.nextLine();
-          list.add(position, name);
+	        try {
+	          System.out.println("What position would you like it to be added to?");
+	          position = sc.nextInt() - 1;
+	          sc.nextLine();
+	          System.out.println("What name would you like to add?");
+	          name = sc.nextLine();
+	          list.add(position, name);
+	        }
+	        catch (Exception e) {
+	        	System.out.println("Input not valid!\n" + "Returning to List Options...");
+	        	sc.next();
+	        }
           break;
         case 2:
-          System.out.println("What position in the list would you like to remove?");
-          position = sc.nextInt() - 1;
-          list.remove(position);
-          break;
+        	try {
+	          System.out.println("What position in the list would you like to remove?");
+	          position = sc.nextInt() - 1;
+	          list.remove(position);
+        	}
+        	catch (Exception e) {
+        		System.out.println("Input not valid!\n" + "Returning to List Options...");
+        		sc.next();
+        	}
+	       break;
         case 3:
           System.out.println("\n\nReturning to main menu.....");
           break;
+        default:
+        	System.out.println("That is not valid!");
+        	break;
       }
     }
   }

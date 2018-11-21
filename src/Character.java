@@ -1,133 +1,122 @@
 
-
 public class Character {
 
-  /*
-   * Java has 8 primitive data types: 
-   * byte use to store numerical values from -128 to 127 
-   * short - use to store numerical values from -32768 to 32767 
-   * int - use to store numerical values from -2,147,483,648 to 2,147,483,647 
-   * long - use to store numerical values from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,808 
-   * float - a data type use to store numbers with a fractional value 
-   * double - a data type that stores a numerical data type that can have a decimal 
-   * boolean - a data type that stores a value of true or false 
-   * char - a data type that stores a single character
-   */
+	/*
+	 * Java has 8 primitive data types: byte use to store numerical values from -128
+	 * to 127 short - use to store numerical values from -32768 to 32767 int - use
+	 * to store numerical values from -2,147,483,648 to 2,147,483,647 long - use to
+	 * store numerical values from -9,223,372,036,854,775,808 to
+	 * 9,223,372,036,854,775,808 float - a data type use to store numbers with a
+	 * fractional value double - a data type that stores a numerical data type that
+	 * can have a decimal boolean - a data type that stores a value of true or false
+	 * char - a data type that stores a single character
+	 */
 
-  /*
-   * All variables below establish the data type for each and makes them private.
-   * Private means their scope is kept within this class and to access the variables
-   * you must use the getter or setter below.
-   */
-  private String name;
-  private int level;
-  private int maxLevel = 50;
-  private int currentPower;
-  private static int baseMaxPower = 10;
-  private double currentHealth;
-  private static double baseMaxHealth = 50.0;
-  private char gender;
-  private String item;
-  private String genderFull;
-  
-  public void isDead() {
-    
-  }
-  public void setName(String newName) {
-   name = newName.substring(0, 1).toUpperCase() + newName.substring(1); // substring and toUpperCase are methods from the String class
-    
-    // This line makes sure the first letter of the person's name is capitalized
-    // It takes the first letter, capitalizes it, then adds the second letter
-    // and since there is no end index in the substring the rest of the String
-  }
+	/*
+	 * All variables below establish the data type for each and makes them private.
+	 * Private means their scope is kept within this class and to access the
+	 * variables you must use the getter or setter below.
+	 */
+	protected String name;
+	private int level;
+	private int maxLevel = 50;
+	private int currentPower;
+	private static int baseMaxPower = 10;
+	private double currentHealth;
+	private static double baseMaxHealth = 50.0;
+	protected char gender;
+	private String item;
+	private String genderFull;
 
-  public String getName() {
-    return name;
-  }
+	public Character(String newName, String newGender) {
+		this.name = newName.substring(0, 1).toUpperCase() + newName.substring(1);
+		this.gender = newGender.toUpperCase().charAt(0); // charAt is the last of three methods from String class
 
-  // All Health methods for getting and setting current and max health
-  public void setCurrentHealth(double newCurrentHealth) {
-    currentHealth = newCurrentHealth;
-  }
+		// This line capitalizes the M or F and converts from String
+		// to char
 
-  public double getCurrentHealth() {
-    return currentHealth;
-  }
+		// Below is the if/else statement
+		if (gender == 'M') { // == Operator compares both sides to see if they are the same, if they are its
+								// value is true, if not then false.
+			this.genderFull = "Male";
+		} else if (gender == 'F') {
+			this.genderFull = "Female";
+		}
+	}
 
-  public double getMaxHealth() {
-    return baseMaxHealth * level;
-  }
+	public String getName() {
+		return name;
+	}
 
-  public void setCurrentPower(int newCurrentPower) {
-    currentPower = newCurrentPower;
-  }
+	// All Health methods for getting and setting current and max health
+	public void setCurrentHealth(double newCurrentHealth) {
+		currentHealth = newCurrentHealth;
+	}
 
-  public int getCurrentPower() {
-    return currentPower;
-  }
+	public double getCurrentHealth() {
+		return currentHealth;
+	}
 
-  public int getMaxPower() {
-    return baseMaxPower * level;
-  }
+	public double getMaxHealth() {
+		return baseMaxHealth * level;
+	}
 
-  public int changeCurrentPower(int changeCurPower) {
-    currentPower += changeCurPower;
+	public void setCurrentPower(int newCurrentPower) {
+		currentPower = newCurrentPower;
+	}
 
-    currentPower = (currentPower > this.getMaxPower()) ? this.getMaxPower() : currentPower;
-    return currentPower;
-  }
+	public int getCurrentPower() {
+		return currentPower;
+	}
 
-  public void setGender(String newGender) {
-    gender = newGender.toUpperCase().charAt(0); // charAt is the last of three methods from String class
-    
-    // This line capitalizes the M or F and converts from String
-    // to char
-    
-    // Below is the if/else statement
-    if (gender == 'M') { // == Operator compares both sides to see if they are the same, if they are its value is true, if not then false.
-      genderFull = "Male";
-    } else if (gender == 'F') {
-      genderFull = "Female";
-    }
-  }
+	public int getMaxPower() {
+		return baseMaxPower * level;
+	}
 
-  public char getGender() {
-    return gender;
-  }
+	public int changeCurrentPower(int changeCurPower) {
+		currentPower += changeCurPower;
 
-  public void setItem(String newItem) {
-    item = newItem;
-  }
+		currentPower = (currentPower > this.getMaxPower()) ? this.getMaxPower() : currentPower;
+		return currentPower;
+	}
 
-  public String getItem() {
-    return item;
-  }
-  
-  public void setLevel(int level) {
-    this.level = level;
-  }
-  
-  public int getLevel() {
-    level = (level > maxLevel) ? maxLevel : level;
-    return level;
-  }
+	public char getGender() {
+		return gender;
+	}
 
-  public double healing(double healthHeal) {
-    currentHealth += healthHeal;
+	public void setItem(String newItem) {
+		item = newItem;
+	}
 
-    // This ternary operator insures that the currentHealth does not exceed the maxHealth
-    currentHealth = (currentHealth > this.getMaxHealth()) ? this.getMaxHealth() : currentHealth;
-    return currentHealth;
-  }
-  
-  public double damage(double damageDealt) {
-    currentHealth -= damageDealt;
-    
-    if (currentHealth < 0) {
-      isDead();
-      return currentHealth = 0.0;
-    } else {
-      return currentHealth;
-    }
-  } 
+	public String getItem() {
+		return item;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public int getLevel() {
+		level = (level > maxLevel) ? maxLevel : level;
+		return level;
+	}
+
+	public double healing(double healthHeal) {
+		currentHealth += healthHeal;
+
+		// This ternary operator insures that the currentHealth does not exceed the
+		// maxHealth
+		currentHealth = (currentHealth > this.getMaxHealth()) ? this.getMaxHealth() : currentHealth;
+		return currentHealth;
+	}
+
+	public double damage(double damageDealt) {
+		currentHealth -= damageDealt;
+
+		if (currentHealth < 0) {
+			return currentHealth = 0.0;
+		} else {
+			return currentHealth;
+		}
+	}
 }
