@@ -50,7 +50,7 @@ public class Arrays {
     for (int j = 0; j < arr.length; j++) {
       if (large < arr[j])
         large = arr[j];
-      	index = j;
+      	index = j - 1;
     }
 
     // Add the sum of the array
