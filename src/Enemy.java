@@ -10,7 +10,8 @@ public class Enemy extends Character {
 		this.power = newPower;
 	}
 
-	public void displayInfo() {
+	@Override
+	public void displayInfo() { // overriding a method is an example of polymorphism
 		System.out.println("An enemy emerges: \n" + "Name: " + name + "\nGender: " + gender + "\nHealth: " + health
 				+ "\nPower: " + power);
 	}

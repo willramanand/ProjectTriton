@@ -26,7 +26,7 @@ public class Main {
 
 		System.out.println("Welcome user to Project Triton\n" + "This is version " + VERSION); // Introduction
 
-		do {
+		do { // do-while loop
 
 			System.out.println("\n_______Main Menu_______" + "\n1. Create a character!"
 					+ "\n2. Print random mathematical processes to prove my math skills!"
@@ -43,7 +43,7 @@ public class Main {
 			switch (mainMenuSelection) {
 			case 1:
 				getCharacterInfo();
-				break; // Exits the switch statement so the cases do not continue.
+				break; // Exits the switch statement so the cases do not continue
 			case 2:
 				System.out.println("The integer " + mo.getICastUp() + " casted to a double is " + mo.castIntToDouble());
 				// castIntToDouble is a method call and
@@ -86,9 +86,7 @@ public class Main {
 		newChar.setCurrentHealth(10);
 		newChar.setCurrentPower(0);
 
-		System.out.printf("\n%s: \n" + "\tGender: %s\n" + "\tHealth: %s/%s HP \n" + "\tPower: %s/%s Power \n",
-				newChar.getName(), newChar.getGender(), newChar.getCurrentHealth(), newChar.getMaxHealth(),
-				newChar.getCurrentPower(), newChar.getMaxPower());
+		newChar.displayInfo();
 
 		Enemy newEnemy = new Enemy("Bob", "M", 5000, 100);
 		newEnemy.displayInfo();

@@ -119,4 +119,10 @@ public class Character {
 			return currentHealth;
 		}
 	}
+	
+	public void displayInfo() {
+		System.out.printf("\n%s: \n" + "\tGender: %s\n" + "\tHealth: %s/%s HP \n" + "\tPower: %s/%s Power \n",
+				getName(), getGender(), getCurrentHealth(), getMaxHealth(),
+				getCurrentPower(), getMaxPower());
+	}
 }
