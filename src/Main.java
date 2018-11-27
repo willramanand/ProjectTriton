@@ -90,5 +90,36 @@ public class Main {
 
 		Enemy newEnemy = new Enemy("Bob", "M", 5000, 100);
 		newEnemy.displayInfo();
+		
+		System.out.println("Now its time to make a car for " + newChar.getName());
+		
+		Car car1 = new Car(newChar.getName());
+		
+		System.out.println("What is the color of " + newChar.getName() + "'s car?");
+		String newColor = sc.nextLine();
+		car1.setColor(newColor);
+		System.out.println("What is the brand of " + newChar.getName() + "'s car?");
+        String newBrand = sc.nextLine();
+        car1.setBrand(newBrand);
+        System.out.println("What is the model of " + newChar.getName() + "'s car?");
+        String newType = sc.nextLine();
+        car1.setType(newType);
+        System.out.println("What is the speed of " + newChar.getName() + "'s car?");
+        int newSpeed = sc.nextInt();
+        car1.setSpeed(newSpeed);
+        System.out.println("What is the horsepower of " + newChar.getName() + "'s car?");
+        int newHorsepower = sc.nextInt();
+        car1.setHorsepower(newHorsepower);
+        car1.displayInfo();
+        
+        System.out.println("\n\n"+ newEnemy.getName() + " approaches with his car!");
+        Car bobCar = new Car();
+        
+        bobCar.setColor("Black");
+        bobCar.setBrand("Bugatti");
+        bobCar.setType("Veyron");
+        bobCar.setSpeed(324);
+        bobCar.setHorsepower(1000);
+        bobCar.displayInfo();
 	}
 }
