@@ -2,8 +2,8 @@ import java.util.Random;
 
 public class MathOps {
 
-  private int iCastUp = 2;
-  private double dCastDown = 5.6;
+  private int icastUp = 2;
+  private double dcastDown = 5.6;
   /*
    * Operator precedence determines the grouping of terms in an expression. This affects how an
    * expression is evaluated. Certain operators have higher precedence than others; for example, the
@@ -11,11 +11,11 @@ public class MathOps {
    */
 
   public int getICastUp() {
-    return iCastUp;
+    return icastUp;
   }
 
   public double getDCastDown() {
-    return dCastDown;
+    return dcastDown;
   }
 
   public void mathOperations() {
@@ -47,17 +47,16 @@ public class MathOps {
   }
 
   // This method takes in int ICastUp and Cast it up to a double and returns double dCastUp
-  public double castIntToDouble() { // This entire line is a header and int
-                                    // ICastUp is a parameter
-    double dCastUp = (double) iCastUp;
-    return dCastUp;
+  public double castIntToDouble() { // This entire line is a header and int // ICastUp is a parameter
+    double dCastUp = (double) icastUp;
+    return dcastUp;
   }
 
   // This method accepts double dCastDown and cast it down to an int
   public int castDoubleToInt() {
-    int iCastDown = (int) dCastDown; // Here I am casting a double to an integer, which means I am
+    int iCastDown = (int) dcastDown; // Here I am casting a double to an integer, which means I am
                                      // converting it from a larger data type to a smaller one
-    return iCastDown;
+    return icastDown;
   }
 
   // This method generates a random number then squares it

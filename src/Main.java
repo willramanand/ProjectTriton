@@ -24,7 +24,8 @@ public class Main {
     StringOps so = new StringOps();
     Arrays arrayClass = new Arrays();
 
-    System.out.println("Welcome user to Project Triton\n" + "This is version " + VERSION); // Introduction
+    System.out.println("Welcome user to Project Triton\n" 
+    + "This is version " + VERSION); // Introduction
 
     do { // do-while loop
 

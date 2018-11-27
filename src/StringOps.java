@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 public class StringOps {
 
+  private String word1;
+  private String word2;
+  
   public void strComp() {
     Scanner sc = new Scanner(System.in);
 
-    String word1;
-    String word2;
 
     System.out.println("Please enter a random word: ");
     word1 = sc.nextLine();
