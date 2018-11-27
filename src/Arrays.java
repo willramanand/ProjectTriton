@@ -15,7 +15,7 @@ public class Arrays {
   private int index;
   private int position;
   private String name;
-  
+
   public void arrayOps() {
     arrayValues();
     twoDArray();
@@ -37,9 +37,9 @@ public class Arrays {
     // Decide the smallest value within the array
     // Enhanced for loop
     small = arr[0];
-    for (int element: arr) {
+    for (int element : arr) {
       if (element == 0) {
-    	  continue; // use of continue to just move on to next part if element is 0
+        break; // use of continue to just move on to next part if element is 0
       } else if (small > element) {
         small = element;
       }
@@ -50,7 +50,7 @@ public class Arrays {
     for (int j = 0; j < arr.length; j++) {
       if (large < arr[j])
         large = arr[j];
-      	index = j - 1;
+      index = j - 1;
     }
 
     // Add the sum of the array
@@ -60,7 +60,8 @@ public class Arrays {
     }
 
     System.out.println("\nThe smallest value in this array is " + small);
-    System.out.println("The largest value in this array is " + large + " and is at index position " + index);
+    System.out.println(
+        "The largest value in this array is " + large + " and is at index position " + index);
     System.out.println("The sum of the values in the array is " + sum);
   }
 
@@ -106,50 +107,46 @@ public class Arrays {
 
       System.out.println("\n\nHere is the current name list: " + list);
 
-      System.out.println("\n----List Options----" 
-          + "\n1. Add a name to list"
-          + "\n2. Remove a name from list" 
-          + "\n3. Return to Main Menu");
+      System.out.println("\n----List Options----" + "\n1. Add a name to list"
+          + "\n2. Remove a name from list" + "\n3. Return to Main Menu");
 
       System.out.println("Please enter a selection: ");
       try {
-    	  selection = sc.nextInt();
+        selection = sc.nextInt();
       } catch (Exception e) {
-    	  sc.next();
+        sc.next();
       }
 
       switch (selection) {
         case 1:
-	        try {
-	          System.out.println("What position would you like it to be added to?");
-	          position = sc.nextInt() - 1;
-	          sc.nextLine();
-	          System.out.println("What name would you like to add?");
-	          name = sc.nextLine();
-	          list.add(position, name);
-	        }
-	        catch (Exception e) {
-	        	System.out.println("Input not valid!\n" + "Returning to List Options...");
-	        	sc.next();
-	        }
+          try {
+            System.out.println("What position would you like it to be added to?");
+            position = sc.nextInt() - 1;
+            sc.nextLine();
+            System.out.println("What name would you like to add?");
+            name = sc.nextLine();
+            list.add(position, name);
+          } catch (Exception e) {
+            System.out.println("Input not valid!\n" + "Returning to List Options...");
+            sc.next();
+          }
           break;
         case 2:
-        	try {
-	          System.out.println("What position in the list would you like to remove?");
-	          position = sc.nextInt() - 1;
-	          list.remove(position);
-        	}
-        	catch (Exception e) {
-        		System.out.println("Input not valid!\n" + "Returning to List Options...");
-        		sc.next();
-        	}
-	       break;
+          try {
+            System.out.println("What position in the list would you like to remove?");
+            position = sc.nextInt() - 1;
+            list.remove(position);
+          } catch (Exception e) {
+            System.out.println("Input not valid!\n" + "Returning to List Options...");
+            sc.next();
+          }
+          break;
         case 3:
           System.out.println("\n\nReturning to main menu.....");
           break;
         default:
-        	System.out.println("That is not valid!");
-        	break;
+          System.out.println("That is not valid!");
+          break;
       }
     }
   }

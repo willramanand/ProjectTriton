@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class MathOps {
-  
+
   private int iCastUp = 2;
   private double dCastDown = 5.6;
   /*
@@ -9,15 +9,15 @@ public class MathOps {
    * expression is evaluated. Certain operators have higher precedence than others; for example, the
    * multiplication operator has higher precedence than the addition operator
    */
-  
+
   public int getICastUp() {
     return iCastUp;
   }
-  
+
   public double getDCastDown() {
     return dCastDown;
   }
-  
+
   public void mathOperations() {
     int mathResult;
 
@@ -45,17 +45,17 @@ public class MathOps {
     mathResult += 10;
     System.out.println("Adding 10 to the last value = " + mathResult);
   }
-  
+
   // This method takes in int ICastUp and Cast it up to a double and returns double dCastUp
-  public double castIntToDouble() {            // This entire line is a header and int
-                                                      // ICastUp is a parameter
-    double dCastUp = (double)iCastUp;
+  public double castIntToDouble() { // This entire line is a header and int
+                                    // ICastUp is a parameter
+    double dCastUp = (double) iCastUp;
     return dCastUp;
   }
 
   // This method accepts double dCastDown and cast it down to an int
   public int castDoubleToInt() {
-    int iCastDown = (int)dCastDown;  // Here I am casting a double to an integer, which means I am
+    int iCastDown = (int) dCastDown; // Here I am casting a double to an integer, which means I am
                                      // converting it from a larger data type to a smaller one
     return iCastDown;
   }
@@ -68,12 +68,12 @@ public class MathOps {
     double sqre = Math.pow(ranNum, 2); // Use of Math Class
     return sqre;
   }
-  
-  public double power(int numTosqr, int exp) { 
+
+  public double power(int numTosqr, int exp) {
     return (double) Math.pow(numTosqr, exp);
   }
 
-  public double power(double numTosqr, double exp) { // method overload	
-	  return Math.pow(numTosqr, exp);		         // example of polymorphism
+  public double power(double numTosqr, double exp) { // method overload
+    return Math.pow(numTosqr, exp); // example of polymorphism
   }
 }
