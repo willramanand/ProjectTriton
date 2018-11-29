@@ -2,17 +2,28 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author wramanand
+ *
+ */
 public class Arrays {
-
-  ArrayList<String> list = new ArrayList<String>();
-  private int small;
-  private int large;
-  private int sum;
+  
+  /**
+   * Stores the value of length of the row for the
+   *    2D array.
+   */
   private int row;
+  
+  /**
+   * Stores the value of length of the column 
+   *    for the 2D array.
+   * 
+   */
   private int col;
+  private int selection;
   private int rowCord;
   private int colCord;
-  private int index;
   private int position;
   private String name;
 
@@ -24,6 +35,24 @@ public class Arrays {
 
   public void arrayValues() {
     int[] arr = new int[5];
+    
+    /**
+     * Stores the smallest value of 
+     *  an array
+     */
+    int small;
+    
+    /**
+     * Stores the largest value of 
+     *  an array
+     */
+    int large;
+    
+    /**
+     * Stores the sum of the values of 
+     *  an array
+     */
+    int sum;
 
     System.out.print("Here is a randomly generated array of 5 integers: \n");
 
@@ -48,10 +77,11 @@ public class Arrays {
     // Decide the largest value within the array
     large = arr[0];
     for (int j = 0; j < arr.length; j++) {
-      if (large < arr[j])
+      if (large < arr[j]) {
         large = arr[j];
-      index = j - 1;
+      }
     }
+    
 
     // Add the sum of the array
     sum = 0;
@@ -59,14 +89,38 @@ public class Arrays {
       sum = sum + arr[m];
     }
 
+    boolean found;
+    int index;
+    
+    found = false;
+    index = 0;
+    
+    while (found == false && arr.length > index) { // Loop to find index of value 42
+      if (arr[index] == 42) {
+        found = true;
+      } else {
+        index = index + 1;
+      }
+    }
+    
+    if (found)
+      System.out.println("The value 42 is located at index " + index);
+    else
+      System.out.println("The value 42 was not found within the array!");
     System.out.println("\nThe smallest value in this array is " + small);
     System.out.println(
-        "The largest value in this array is " + large + " and is at index position " + index);
+        "The largest value in this array is " + large);
     System.out.println("The sum of the values in the array is " + sum);
   }
 
   public void twoDArray() {
     int[][] twoDArr = new int[3][6];
+    
+    /**
+     * Stores the largest value with 
+     *  in a 2D array
+     */
+    int twodLarge;
 
     row = twoDArr.length;
     col = twoDArr[0].length;
@@ -83,24 +137,25 @@ public class Arrays {
       System.out.println();
     }
 
-    large = twoDArr[0][0];
+    twodLarge = twoDArr[0][0];
     for (int m = 0; m < row; m++) {
       for (int n = 0; n < col; n++) {
-        if (large < twoDArr[m][n]) {
-          large = twoDArr[m][n];
-          rowCord = m + 1;
-          colCord = n + 1;
+        if (twodLarge < twoDArr[m][n]) {
+          twodLarge = twoDArr[m][n];
+          rowCord = m;
+          colCord = n;
         }
       }
     }
 
-    System.out.println("\nThe largest value in the array is " + large);
-    System.out.println("The cordinate for the row of this value is " + rowCord);
-    System.out.println("The coordinate for the column of this value is " + colCord);
+    System.out.println("\nThe largest value in the array is " + twodLarge);
+    System.out.println("The index for the row of this value is " + rowCord);
+    System.out.println("The index for the column of this value is " + colCord);
   }
 
   public void arrayList() {
-    int selection = 0;
+    ArrayList<String> list = new ArrayList<String>();
+    @SuppressWarnings("resource")
     Scanner sc = new Scanner(System.in);
 
     while (selection != 3) {

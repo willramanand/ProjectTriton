@@ -1,31 +1,47 @@
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-/*
- * @WillRam
- * 
+/**
  * A sweet program to show off all I learned in COP 2006.
+ * 
+ * @author wramanand 
  */
-
 public class Main {
 
-  final static double VERSION = 1.0; // This is a final variable which means it has a constant value
+  /**
+   * The version number for the program.
+   */
+  static final double VERSION = 1.0;
 
+  /**
+   * The variable for the selection
+   *    in the main menu.
+   */
+  private static int mainMenuSelection;
+  
+  /**
+   * This is the default main method
+   *    which runs the program.
+   * @param args
+   */
   public static void main(String[] args) {
     printIntro();
   }
 
+  /**
+   * Prints the introduction to the program
+   *    and allows the user to select which
+   *    part of the program they are using.
+   */
   public static void printIntro() {
 
-    int mainMenuSelection = 0;
-
+    @SuppressWarnings("resource")
     Scanner sc = new Scanner(System.in);
     MathOps mo = new MathOps();
     StringOps so = new StringOps();
     Arrays arrayClass = new Arrays();
 
     System.out.println("Welcome user to Project Triton\n" 
-    + "This is version " + VERSION); // Introduction
+        + "This is version " + VERSION); // Introduction
 
     do { // do-while loop
 
@@ -73,7 +89,14 @@ public class Main {
     } while (mainMenuSelection != 5);
   }
 
+  /**
+   * Used to get user input for a
+   *    custom character and then
+   *    creates an object with that
+   *    information.
+   */
   public static void getCharacterInfo() {
+    @SuppressWarnings("resource")
     Scanner sc = new Scanner(System.in);
 
     System.out.println("Please enter your character's name: ");
@@ -82,47 +105,50 @@ public class Main {
     System.out.println("Please enter your character's gender as M or F: ");
     String newGender = sc.nextLine();
 
-    Character newChar = new Character(newName, newGender);
+    Character[] ch = new Character[2]; // Polymorphism example
+    
+    ch[0] = new Player(newName, newGender, 50, 10, 0);
+    ch[1] = new Enemy("Bob", "M", 5000, 1000);
+    
+    for (Character characters: ch) {
+      characters.displayInfo();
+    }
 
-    newChar.setLevel(50);
+    System.out.println("\nNow its time to make a car for " + ch[0].getName());
 
-    newChar.setCurrentHealth(10);
-    newChar.setCurrentPower(0);
+    Car[] car = new Car[2];
+    car[0] = new Car(ch[0].getName());
 
-    newChar.displayInfo();
-
-    Enemy newEnemy = new Enemy("Bob", "M", 5000, 100);
-    newEnemy.displayInfo();
-
-    System.out.println("Now its time to make a car for " + newChar.getName());
-
-    Car car1 = new Car(newChar.getName());
-
-    System.out.println("What is the color of " + newChar.getName() + "'s car?");
+    System.out.println("\nWhat is the color of " + ch[0].getName() + "'s car?");
     String newColor = sc.nextLine();
-    car1.setColor(newColor);
-    System.out.println("What is the brand of " + newChar.getName() + "'s car?");
+    car[0].setColor(newColor);
+    
+    System.out.println("What is the brand of " + ch[0].getName() + "'s car?");
     String newBrand = sc.nextLine();
-    car1.setBrand(newBrand);
-    System.out.println("What is the model of " + newChar.getName() + "'s car?");
+    car[0].setBrand(newBrand);
+    
+    System.out.println("What is the model of " + ch[0].getName() + "'s car?");
     String newType = sc.nextLine();
-    car1.setType(newType);
-    System.out.println("What is the speed of " + newChar.getName() + "'s car?");
+    car[0].setType(newType);
+    
+    System.out.println("What is the speed of " + ch[0].getName() + "'s car?");
     int newSpeed = sc.nextInt();
-    car1.setSpeed(newSpeed);
-    System.out.println("What is the horsepower of " + newChar.getName() + "'s car?");
+    car[0].setSpeed(newSpeed);
+    
+    System.out.println("What is the horsepower of " + ch[0].getName() + "'s car?");
     int newHorsepower = sc.nextInt();
-    car1.setHorsepower(newHorsepower);
-    car1.displayInfo();
+    car[0].setHorsepower(newHorsepower);
 
-    System.out.println("\n\n" + newEnemy.getName() + " approaches with his car!");
-    Car bobCar = new Car();
-
-    bobCar.setColor("Black");
-    bobCar.setBrand("Bugatti");
-    bobCar.setType("Veyron");
-    bobCar.setSpeed(324);
-    bobCar.setHorsepower(1000);
-    bobCar.displayInfo();
+    System.out.println("\n\n" + ch[1].getName() + " approaches with his car!");
+    car[1] = new Car();
+    car[1].setColor("Black");
+    car[1].setBrand("Bugatti");
+    car[1].setType("Veyron");
+    car[1].setSpeed(324);
+    car[1].setHorsepower(1000);
+    
+    for (Car cars: car) {
+      cars.displayInfo();
+    }
   }
 }

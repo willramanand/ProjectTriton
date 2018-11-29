@@ -12,7 +12,7 @@ public class Enemy extends Character {
 
   @Override
   public void displayInfo() { // overriding a method is an example of polymorphism
-    System.out.println("An enemy emerges: \n" + "Name: " + name + "\nGender: " + gender
-        + "\nHealth: " + health + "\nPower: " + power);
+    System.out.println("\nAn enemy emerges: \n" + "Name: " + name + "\t\nGender: " + gender
+        + "\t\nHealth: " + health + "\t\nPower: " + power);
   }
 }

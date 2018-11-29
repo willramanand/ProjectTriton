@@ -44,19 +44,21 @@ public class MathOps {
 
     mathResult += 10;
     System.out.println("Adding 10 to the last value = " + mathResult);
+    
+    System.out.println("Adding 1 and 2: " + add(1, 2));
+    System.out.println("Adding 1, 2 and 3: " + add(1, 2, 3));
   }
 
   // This method takes in int ICastUp and Cast it up to a double and returns double dCastUp
-  public double castIntToDouble() { // This entire line is a header and int // ICastUp is a parameter
-    double dCastUp = (double) icastUp;
+  public double castIntToDouble() {    // This entire line is a header and int 
+    double dcastUp = (double) icastUp; // ICastUp is a parameter
     return dcastUp;
   }
 
   // This method accepts double dCastDown and cast it down to an int
   public int castDoubleToInt() {
-    int iCastDown = (int) dcastDown; // Here I am casting a double to an integer, which means I am
-                                     // converting it from a larger data type to a smaller one
-    return icastDown;
+    int icastDown = (int) dcastDown; // Here I am casting a double to an integer, which means I am
+    return icastDown;                // converting it from a larger data type to a smaller one
   }
 
   // This method generates a random number then squares it
@@ -68,11 +70,11 @@ public class MathOps {
     return sqre;
   }
 
-  public double power(int numTosqr, int exp) {
-    return (double) Math.pow(numTosqr, exp);
+  public int add(int a, int b) {
+    return a + b;
   }
 
-  public double power(double numTosqr, double exp) { // method overload
-    return Math.pow(numTosqr, exp); // example of polymorphism
+  public int add(int a, int b, int c) { // method overload
+    return a + b + c;                   // example of polymorphism
   }
 }

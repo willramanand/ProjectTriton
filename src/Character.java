@@ -1,5 +1,10 @@
-
-public class Character {
+/**
+ * 
+ * 
+ * @author wramanand
+ *
+ */
+public abstract class Character {
 
   /*
    * Java has 8 primitive data types: byte use to store numerical values from -128 to 127 short -
@@ -17,30 +22,29 @@ public class Character {
    * setter below.
    */
   protected String name;
-  private int level;
+  protected int level;
   private int maxLevel = 50;
-  private int currentPower;
+  protected int currentPower;
   private static int baseMaxPower = 10;
-  private double currentHealth;
+  protected double currentHealth;
   private static double baseMaxHealth = 50.0;
   protected char gender;
   private String item;
+  @SuppressWarnings("unused")
   private String genderFull;
 
   public Character(String newName, String newGender) {
     this.name = newName.substring(0, 1).toUpperCase() + newName.substring(1);
-    this.gender = newGender.toUpperCase().charAt(0); // charAt is the last of three methods from
-                                                     // String class
+    this.gender = newGender.toUpperCase().charAt(0); 
+    // charAt is the last of three methods from String class
 
     // This line capitalizes the M or F and converts from String
     // to char
 
     // Below is the if/else statement
-    if (gender == 'M') { // == Operator compares both sides to see if they are the same, if they are
-                         // its
-                         // value is true, if not then false.
-      this.genderFull = "Male";
-    } else if (gender == 'F') {
+    if (gender == 'M') {         // == Operator compares both sides to see if
+      this.genderFull = "Male";  // they are the same, if they are its value
+    } else if (gender == 'F') {  // is true, if not then false.
       this.genderFull = "Female";
     }
   }

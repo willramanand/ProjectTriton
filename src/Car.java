@@ -56,7 +56,7 @@ public class Car {
   }
 
   public void displayInfo() {
-    System.out.println(brand + " " + type + ":" + "\t\nColor: " + color + "\t\nOwner: " + owner
+    System.out.println("\n" + brand + " " + type + ":" + "\t\nColor: " + color + "\t\nOwner: " + owner
         + "\t\nHorsepower: " + horsepower + "\t\nSpeed: " + speed);
   }
 }

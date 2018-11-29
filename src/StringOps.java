@@ -6,6 +6,7 @@ public class StringOps {
   private String word2;
   
   public void strComp() {
+    @SuppressWarnings("resource")
     Scanner sc = new Scanner(System.in);
 
 
