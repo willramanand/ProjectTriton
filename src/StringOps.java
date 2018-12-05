@@ -1,10 +1,26 @@
 import java.util.Scanner;
 
+/**
+ * Compares two words to see if the are the same and in the same case.
+ * 
+ * @author wramanand
+ *
+ */
 public class StringOps {
 
+  /**
+   * Stores the user inputed word.
+   */
   private String word1;
+
+  /**
+   * Stores another user inputed word.
+   */
   private String word2;
-  
+
+  /**
+   * Runs the comparison of the two words using a variety of String methods.
+   */
   public void strComp() {
     @SuppressWarnings("resource")
     Scanner sc = new Scanner(System.in);
